@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="{% static 'todo/index.css'%}"/>
+</head>
+<body>
+    <h1>TODO</h1>
+    <form action="{% url 'add'%}" method="POST">
+        {%csrf_token%}
+        {{form}}
+        <input type="submit" value="Add">
+    </form>
+    <a class="btn" href="{% url 'index'%}">View Tasks</a>
+</body>
+</html>
